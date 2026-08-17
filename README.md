@@ -56,3 +56,12 @@ SQL Reporting Tables (Gold - business - ready)
 **Holiday Impact on Sales**
 - Average sales per store-week record were about 7% higher during holiday weeks ($17.035 vs $15.901), confirming a real sales spike during holidays.
 - Total holiday-period sales appear lower only because there are far fewer holiday weeks than regular weeks in the dataset - average, not total, is the correct metric for measuring holiday impact.
+
+
+## Data Quality & Design Decisions
+
+I used **left joins** instead of inner joins when combining the sales, stores, and features tables. Some sales records may have a missing store or features match — simulating late-arriving or incomplete reference data, which is common in real-world pipelines.
+
+An inner join would have silently dropped those rows, since they'd have no match — in a real business context, this would mean **losing actual revenue from the report with no error or warning**. Left joins preserve every sales record regardless of match status, and unmatched rows are explicitly logged into a separate table (`unmatched_sales_log`) for review, instead of disappearing silently.
+
+This ensures the pipeline is **transparent about data quality issues** rather than hiding them, and revenue figures in the final reports remain accurate and complete.
