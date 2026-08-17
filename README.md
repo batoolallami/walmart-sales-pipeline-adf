@@ -67,6 +67,28 @@ An inner join would have silently dropped those rows, since they'd have no match
 This ensures the pipeline is **transparent about data quality issues** rather than hiding them, and revenue figures in the final reports remain accurate and complete.
 
 
+## Screenshots
+
+**Ingestion Pipeline** - Parallel Copy Activities loading raw CSVs into staging tables
+
+![Ingest Pipeline](screenshots/1_ingest_pipeline.png)
+
+**Transformation Data Flow** -Joins, conditional split for data quality, and aggregations
+
+![Transform Data Flow](screenshots/2-transform_pipeline.png)
+
+**Database Tables** - Staging and gold-layer reporting tables in Azure SQL Database
+
+![Database Tables](screenshots/3-database-tables.png)
+
+**Department Sales Results**
+
+![Dept Sales Results](screenshots/4-dept_sales_report.png)
+
+**Holiday Impact Results**
+
+![Holiday Impact Results](screenshots/5-holiday_impact_sales.png)
+
 ## Future Improvements
 
 - **Power BI Dashboard** - connect Power BI to the gold-layer reporting tables to visualize department performance and holiday sales trends
