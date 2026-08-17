@@ -47,3 +47,12 @@ SQL Reporting Tables (Gold - business - ready)
    - Aggregate the cleaned table to answer business questions (sales by department, holiday impact on sales)
 5. **Load To Reporting** - Writes the final aggregated results into gold-layer reporting tables in Azure SQL Database.
 
+
+## Key Insights
+**Top Performing Departments**
+- **Department 92** generated the highest total sales at **483.9M**, followed by Department 95 ($449.3M) and Department 38 ($393.1M).
+- Most top performing departments had a consistent transaction count of 6,435, suggesting sales volume differences are driven more by       revenue per transaction than by transaction frequency.
+  
+**Holiday Impact on Sales**
+- Average sales per store-week record were about 7% higher during holiday weeks ($17.035 vs $15.901), confirming a real sales spike during holidays.
+- Total holiday-period sales appear lower only because there are far fewer holiday weeks than regular weeks in the dataset - average, not total, is the correct metric for measuring holiday impact.
