@@ -4,6 +4,7 @@ The pipeline ingests raw retail data, storing it in a data lake as the source of
 to answer business questions for stakeholders.
 ### Business Questions Answered
 1- which departments generate the highest sales?
+
 2- how do holidays impact weekly sales performance?
 
 
