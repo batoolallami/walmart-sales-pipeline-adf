@@ -65,3 +65,10 @@ I used **left joins** instead of inner joins when combining the sales, stores, a
 An inner join would have silently dropped those rows, since they'd have no match — in a real business context, this would mean **losing actual revenue from the report with no error or warning**. Left joins preserve every sales record regardless of match status, and unmatched rows are explicitly logged into a separate table (`unmatched_sales_log`) for review, instead of disappearing silently.
 
 This ensures the pipeline is **transparent about data quality issues** rather than hiding them, and revenue figures in the final reports remain accurate and complete.
+
+
+## Future Improvements
+
+- **Power BI Dashboard** - connect Power BI to the gold-layer reporting tables to visualize department performance and holiday sales trends
+- **Automated Data Quality Alerts** - Add automated checks and alerts on the `unmatched_sales_log` table to proactively flag data quality issues instead of requiring manual review.
+- **Dynamic File Handling** - Parameterize the pipeline to handle new file dynamically (using Get Metadata + ForEach), instead of relying on fixed file names.
